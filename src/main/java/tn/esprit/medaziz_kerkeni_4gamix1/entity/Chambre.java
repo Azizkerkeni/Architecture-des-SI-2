@@ -1,40 +1,40 @@
-package tn.esprit.medaziz_kerkeni_4gamix1.entity;
+package com.example.demo.entities;
 
 import jakarta.persistence.*;
-import lombok.*;
+import java.util.List;
 
 @Entity
 public class Chambre {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idChambre;
+
     private Long numeroChambre;
 
     @Enumerated(EnumType.STRING)
     private TypeChambre typeC;
 
-    // Getters et Setters
-    public Long getIdChambre() {
-        return idChambre;
-    }
+    @ManyToOne
+    @JoinColumn(name = "id_bloc")
+    private Bloc bloc;
 
-    public void setIdChambre(Long idChambre) {
-        this.idChambre = idChambre;
-    }
+    @OneToMany(mappedBy = "chambre", cascade = CascadeType.ALL)
+    private List<Reservation> reservations;
 
-    public Long getNumeroChambre() {
-        return numeroChambre;
-    }
+    // Getters and Setters
+    public Long getIdChambre() { return idChambre; }
+    public void setIdChambre(Long idChambre) { this.idChambre = idChambre; }
 
-    public void setNumeroChambre(Long numeroChambre) {
-        this.numeroChambre = numeroChambre;
-    }
+    public Long getNumeroChambre() { return numeroChambre; }
+    public void setNumeroChambre(Long numeroChambre) { this.numeroChambre = numeroChambre; }
 
-    public TypeChambre getTypeC() {
-        return typeC;
-    }
+    public TypeChambre getTypeC() { return typeC; }
+    public void setTypeC(TypeChambre typeC) { this.typeC = typeC; }
 
-    public void setTypeC(TypeChambre typeC) {
-        this.typeC = typeC;
-    }
+    public Bloc getBloc() { return bloc; }
+    public void setBloc(Bloc bloc) { this.bloc = bloc; }
+
+    public List<Reservation> getReservations() { return reservations; }
+    public void setReservations(List<Reservation> reservations) { this.reservations = reservations; }
 }
