@@ -1,4 +1,6 @@
-package com.example.demo.entities;
+package tn.esprit.medaziz_kerkeni_4gamix1.entity;
+
+
 
 import jakarta.persistence.*;
 import java.util.List;

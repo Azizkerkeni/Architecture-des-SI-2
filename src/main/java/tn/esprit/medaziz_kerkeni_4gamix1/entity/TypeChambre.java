@@ -1,4 +1,4 @@
-package com.example.demo.entities;
+package tn.esprit.medaziz_kerkeni_4gamix1.entity;
 
 public enum TypeChambre {
     SIMPLE,
