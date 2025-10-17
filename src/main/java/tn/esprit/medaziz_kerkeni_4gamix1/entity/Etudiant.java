@@ -1,12 +1,18 @@
 package tn.esprit.medaziz_kerkeni_4gamix1.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 import java.util.List;
 
+@Setter
+@Getter
 @Entity
 public class Etudiant {
 
+    // Getters et Setters
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idEtudiant;
@@ -22,19 +28,4 @@ public class Etudiant {
     @ManyToMany(mappedBy = "etudiants")
     private List<Reservation> reservations;
 
-    // Getters et Setters
-    public Long getIdEtudiant() { return idEtudiant; }
-    public void setIdEtudiant(Long idEtudiant) { this.idEtudiant = idEtudiant; }
-    public String getNomEt() { return nomEt; }
-    public void setNomEt(String nomEt) { this.nomEt = nomEt; }
-    public String getPrenomEt() { return prenomEt; }
-    public void setPrenomEt(String prenomEt) { this.prenomEt = prenomEt; }
-    public Long getCin() { return cin; }
-    public void setCin(Long cin) { this.cin = cin; }
-    public String getEcole() { return ecole; }
-    public void setEcole(String ecole) { this.ecole = ecole; }
-    public Date getDateNaissance() { return dateNaissance; }
-    public void setDateNaissance(Date dateNaissance) { this.dateNaissance = dateNaissance; }
-    public List<Reservation> getReservations() { return reservations; }
-    public void setReservations(List<Reservation> reservations) { this.reservations = reservations; }
 }

@@ -1,11 +1,17 @@
 package tn.esprit.medaziz_kerkeni_4gamix1.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
+@Setter
+@Getter
 @Entity
 public class Chambre {
 
+    // Getters and Setters
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idChambre;
@@ -22,19 +28,4 @@ public class Chambre {
     @OneToMany(mappedBy = "chambre", cascade = CascadeType.ALL)
     private List<Reservation> reservations;
 
-    // Getters and Setters
-    public Long getIdChambre() { return idChambre; }
-    public void setIdChambre(Long idChambre) { this.idChambre = idChambre; }
-
-    public Long getNumeroChambre() { return numeroChambre; }
-    public void setNumeroChambre(Long numeroChambre) { this.numeroChambre = numeroChambre; }
-
-    public TypeChambre getTypeC() { return typeC; }
-    public void setTypeC(TypeChambre typeC) { this.typeC = typeC; }
-
-    public Bloc getBloc() { return bloc; }
-    public void setBloc(Bloc bloc) { this.bloc = bloc; }
-
-    public List<Reservation> getReservations() { return reservations; }
-    public void setReservations(List<Reservation> reservations) { this.reservations = reservations; }
 }

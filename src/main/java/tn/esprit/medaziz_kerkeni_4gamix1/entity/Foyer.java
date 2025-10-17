@@ -1,11 +1,17 @@
 package tn.esprit.medaziz_kerkeni_4gamix1.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
+@Setter
+@Getter
 @Entity
 public class Foyer {
 
+    // Getters et Setters
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idFoyer;
@@ -20,15 +26,4 @@ public class Foyer {
     @OneToMany(mappedBy = "foyer", cascade = CascadeType.ALL)
     private List<Bloc> blocs;
 
-    // Getters et Setters
-    public Long getIdFoyer() { return idFoyer; }
-    public void setIdFoyer(Long idFoyer) { this.idFoyer = idFoyer; }
-    public String getNomFoyer() { return nomFoyer; }
-    public void setNomFoyer(String nomFoyer) { this.nomFoyer = nomFoyer; }
-    public Long getCapaciteFoyer() { return capaciteFoyer; }
-    public void setCapaciteFoyer(Long capaciteFoyer) { this.capaciteFoyer = capaciteFoyer; }
-    public Universite getUniversite() { return universite; }
-    public void setUniversite(Universite universite) { this.universite = universite; }
-    public List<Bloc> getBlocs() { return blocs; }
-    public void setBlocs(List<Bloc> blocs) { this.blocs = blocs; }
 }

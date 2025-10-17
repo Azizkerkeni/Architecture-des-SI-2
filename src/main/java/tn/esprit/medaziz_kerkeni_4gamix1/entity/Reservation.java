@@ -1,12 +1,18 @@
 package tn.esprit.medaziz_kerkeni_4gamix1.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 import java.util.List;
 
+@Setter
+@Getter
 @Entity
 public class Reservation {
 
+    // Getters et Setters
     @Id
     private String idReservation;
 
@@ -27,15 +33,4 @@ public class Reservation {
     )
     private List<Etudiant> etudiants;
 
-    // Getters et Setters
-    public String getIdReservation() { return idReservation; }
-    public void setIdReservation(String idReservation) { this.idReservation = idReservation; }
-    public Date getAnneeUniversitaire() { return anneeUniversitaire; }
-    public void setAnneeUniversitaire(Date anneeUniversitaire) { this.anneeUniversitaire = anneeUniversitaire; }
-    public boolean isEstValide() { return estValide; }
-    public void setEstValide(boolean estValide) { this.estValide = estValide; }
-    public Chambre getChambre() { return chambre; }
-    public void setChambre(Chambre chambre) { this.chambre = chambre; }
-    public List<Etudiant> getEtudiants() { return etudiants; }
-    public void setEtudiants(List<Etudiant> etudiants) { this.etudiants = etudiants; }
 }
