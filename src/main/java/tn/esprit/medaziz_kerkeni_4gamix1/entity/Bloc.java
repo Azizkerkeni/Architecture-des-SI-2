@@ -1,23 +1,17 @@
 package tn.esprit.medaziz_kerkeni_4gamix1.entity;
 
-
-
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.util.List;
-
-@Setter
-@Getter
-@Entity
+@Entity @Getter @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Bloc {
-
-    // Getters et Setters
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idBloc;
-
     private String nomBloc;
     private Long capaciteBloc;
 
@@ -25,7 +19,9 @@ public class Bloc {
     @JoinColumn(name = "id_foyer")
     private Foyer foyer;
 
-    @OneToMany(mappedBy = "bloc", cascade = CascadeType.ALL)
-    private List<Chambre> chambres;
+    @OneToMany(mappedBy = "bloc",  cascade = CascadeType.ALL)
+    List<Chambre> chambres;
+
+
 
 }

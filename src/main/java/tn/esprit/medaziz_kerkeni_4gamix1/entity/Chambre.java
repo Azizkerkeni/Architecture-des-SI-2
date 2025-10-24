@@ -1,31 +1,26 @@
 package tn.esprit.medaziz_kerkeni_4gamix1.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.util.List;
 
-@Setter
-@Getter
-@Entity
+@Entity @Getter @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Chambre {
-
-    // Getters and Setters
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idChambre;
-
     private Long numeroChambre;
 
     @Enumerated(EnumType.STRING)
     private TypeChambre typeC;
 
     @ManyToOne
-    @JoinColumn(name = "id_bloc")
-    private Bloc bloc;
+    Bloc bloc;
 
-    @OneToMany(mappedBy = "chambre", cascade = CascadeType.ALL)
-    private List<Reservation> reservations;
-
+    @OneToMany(cascade = CascadeType.ALL)
+    List<Reservation> reservations;
 }

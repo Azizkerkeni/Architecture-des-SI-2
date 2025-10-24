@@ -7,25 +7,18 @@ import lombok.Setter;
 import java.util.Date;
 import java.util.List;
 
-@Setter
-@Getter
-@Entity
+@Entity @Getter @Setter
 public class Etudiant {
-
-    // Getters et Setters
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idEtudiant;
-
     private String nomEt;
     private String prenomEt;
     private Long cin;
     private String ecole;
-
     @Temporal(TemporalType.DATE)
     private Date dateNaissance;
 
     @ManyToMany(mappedBy = "etudiants")
-    private List<Reservation> reservations;
+    List<Reservation> reservations;
 
 }
