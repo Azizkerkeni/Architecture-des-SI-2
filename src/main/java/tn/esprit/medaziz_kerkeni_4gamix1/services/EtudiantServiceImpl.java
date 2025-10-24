@@ -15,26 +15,28 @@ public class EtudiantServiceImpl implements EtudiantService{
 
     @Override
     public Etudiant ajouteretudiant(Etudiant etudiant) {
-        return null;
+        return EtudiantRepository.save(etudiant);
     }
 
     @Override
     public Etudiant modifieretudiant(Etudiant etudiant) {
-        return null;
+        return EtudiantRepository.save(etudiant);
     }
 
     @Override
     public void supprimeretudiant(Long id) {
 
+        EtudiantRepository.deleteById(Math.toIntExact(id));
+
     }
 
     @Override
     public Etudiant getetudiant(int id) {
-        return null;
+        return EtudiantRepository.findById(id).orElseThrow();
     }
 
     @Override
     public List<Etudiant> getEtudiant() {
-        return List.of();
+        return (List<Etudiant>) EtudiantRepository.findAll();
     }
 }

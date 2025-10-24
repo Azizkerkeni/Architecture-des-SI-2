@@ -1,13 +1,17 @@
 package tn.esprit.medaziz_kerkeni_4gamix1.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.util.Date;
 import java.util.List;
 
 @Entity @Getter @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
+
 public class Etudiant {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idEtudiant;

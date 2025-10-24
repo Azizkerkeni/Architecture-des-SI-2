@@ -10,6 +10,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+
+
 public class Chambre {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idChambre;

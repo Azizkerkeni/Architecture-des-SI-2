@@ -8,6 +8,7 @@ import tn.esprit.medaziz_kerkeni_4gamix1.entity.Chambre;
 import java.util.List;
 @AllArgsConstructor
 @Service
+
 public class ChambreServiceImpl implements ChambreService {
 
     private ChambreRepository  ChambreRepository;
@@ -19,21 +20,23 @@ public class ChambreServiceImpl implements ChambreService {
 
     @Override
     public Chambre modifierchambre(Chambre chambre) {
-        return null;
+        return ChambreRepository.save(chambre);
     }
 
     @Override
     public void supprimerchambre(Long id) {
 
+        ChambreRepository.deleteById(id);
+
     }
 
     @Override
     public Chambre getchambre(int id) {
-        return null;
+        return ChambreRepository.findById((long) id).orElseThrow();
     }
 
     @Override
     public List<Chambre> getChambre() {
-        return List.of();
+        return ChambreRepository.findAll();
     }
 }

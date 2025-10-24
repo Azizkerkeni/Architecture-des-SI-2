@@ -10,6 +10,8 @@ public interface ReservationService {
     Reservation ajouterreservation(Reservation reservation);
     Reservation modifierreservation(Reservation reservation);
     void supprimerreservation(Long id);
-    Reservation getreservation(int id);
+
+    Reservation getreservation(Long id);
+
     List<Reservation> getReservation();
 }

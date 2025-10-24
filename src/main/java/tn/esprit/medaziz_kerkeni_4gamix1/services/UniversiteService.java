@@ -11,6 +11,7 @@ public interface UniversiteService {
     Universite ajouteruniversite(Universite universite);
     Universite modifieruniversite(Universite universite);
     void supprimeruniversite(Long id);
-    Universite getuniversite(int id);
+    Universite getuniversite(Long id);
+
     List<Universite> getUniversite();
 }

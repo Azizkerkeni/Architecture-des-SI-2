@@ -2,7 +2,6 @@ package tn.esprit.medaziz_kerkeni_4gamix1.services;
 
 
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.medaziz_kerkeni_4gamix1.Repositories.BlocRepository;
 import tn.esprit.medaziz_kerkeni_4gamix1.entity.Bloc;
