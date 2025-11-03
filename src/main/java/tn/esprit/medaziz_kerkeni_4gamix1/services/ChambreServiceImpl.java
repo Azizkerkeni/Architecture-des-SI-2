@@ -31,7 +31,7 @@ public class ChambreServiceImpl implements ChambreService {
     }
 
     @Override
-    public Chambre getchambre(int id) {
+    public Chambre getchambre(Long id) {
         return ChambreRepository.findById((long) id).orElseThrow();
     }
 

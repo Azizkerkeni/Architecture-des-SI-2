@@ -9,6 +9,6 @@ public interface ChambreService {
     Chambre ajouterchambre(Chambre chambre);
     Chambre modifierchambre(Chambre chambre);
     void supprimerchambre(Long id);
-    Chambre getchambre(int id);
+    Chambre getchambre(Long id);
     List<Chambre> getChambre();
 }

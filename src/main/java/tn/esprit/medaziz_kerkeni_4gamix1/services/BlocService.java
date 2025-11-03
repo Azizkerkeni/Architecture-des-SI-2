@@ -9,6 +9,6 @@ public interface BlocService {
     Bloc ajouterBloc(Bloc bloc);
     Bloc modifierBloc(Bloc bloc);
     void supprimerBloc(Long id);
-    Bloc getBloc(int id);
+    Bloc getBloc(Long id);
     List<Bloc> getBlocs();
 }

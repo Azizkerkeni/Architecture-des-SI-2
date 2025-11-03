@@ -34,7 +34,7 @@ public class BlocServiceImpl implements BlocService {
     }
 
     @Override
-    public Bloc getBloc(int id) {
+    public Bloc getBloc(Long id) {
         return blocRepository.findById((long) id).orElseThrow();
     }
 

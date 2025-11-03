@@ -11,6 +11,6 @@ public interface EtudiantService {
     Etudiant ajouteretudiant(Etudiant etudiant);
     Etudiant modifieretudiant(Etudiant etudiant);
     void supprimeretudiant(Long id);
-    Etudiant getetudiant(int id);
+    Etudiant getetudiant(Long id);
     List<Etudiant> getEtudiant();
 }

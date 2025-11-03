@@ -11,6 +11,6 @@ public interface FoyerService {
     Foyer ajouterfoyer(Foyer foyer);
     Foyer modifierfoyer(Foyer foyer);
     void supprimerfoyer(Long id);
-    Foyer getfoyer(int id);
+    Foyer getfoyer(Long id);
     List<Foyer> getFoyer();
 }
